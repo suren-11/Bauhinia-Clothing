@@ -1,0 +1,56 @@
+<header>
+    <h1>Bauhinia Clothing Store</h1>
+    <div class="logger">
+        <!-- <p>{{name}}</p> -->
+        <button class="btn btn-danger btn-sm">Logout</button>
+    </div>
+</header>
+<nav>
+    <a href="#">Home</a> |
+    <a routerLink="/dashboard">Shop</a> |
+    <a href="#">New Arrivals</a> |
+    <a href="#">Categories</a> |
+    <a href="#">My Account</a>
+</nav>
+<section>
+    <div class="container" >
+        <form>
+            <div class="form-group row">
+              <label for="customerName" class="col-sm-2 form-label text-center">Cutomer Name:</label>
+              <input type="text" class="form-control col-sm-3" value="{{name}}" readonly>
+              <label for="customerName" class="col-sm-1 form-label text-center">Date:</label>
+              <input type="text" class="form-control col-sm-2" value="{{date}}" readonly>
+              <label for="total" class="form-label col-1">Total:</label>
+              <input type="text" class="form-control col-2" value="{{total}}" readonly >&nbsp;
+            </div>
+            <div class="mb-1 row">
+                <label for="address" class="form-label col-sm-2">Delivery Address:</label>
+                <input type="text" class="form-control col-sm-7" [(ngModel)] = "order.deliveryAddress" [ngModelOptions]="{standalone: true}">&nbsp;
+                <button type="submit" class="btn btn-primary col-2" (click)="click();">Submit</button>
+              </div>
+          </form>
+    </div>
+    <hr>
+    <div class="tableDiv">
+        <table class="table table-bordered text-center">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Total</th>
+                <th scope="col">Option</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of order.cartItems">
+                <th scope="row">{{c.productId}}</th>
+                <td>{{c.qty}}</td>
+                <td>{{c.total}}</td>
+                <td><button class="btn btn-danger" (click)="cartRemove(c)">remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</section>
+
+<app-footer></app-footer>

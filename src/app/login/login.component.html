@@ -1,0 +1,29 @@
+<div class="outer">
+  <div class="inner">
+    <a routerLink="/staffLogin">
+      <button class="btn btn-primary staffBtn">Staff</button>
+    </a>
+    <h1 id="loginName">Customer Login</h1>
+    <div class="form">
+      <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email :</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="staticEmail" [(ngModel)] = "email">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label" >Password :</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword" [(ngModel)] = "password">
+        </div>
+      </div>
+      <button class="btn btn-primary col-sm-10 login" type="submit" (click)="onSubmit();" >Login</button>
+      <div class="paragraph">
+        <p>Want to be a Customer? <a routerLink="/customer" >Create an account</a> </p>
+      </div>
+    </div>
+  </div>
+  <div class="inner2">
+    <h1 class="Name" >Bauhinia Clothing's</h1>
+  </div>
+</div>

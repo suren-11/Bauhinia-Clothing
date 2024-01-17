@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logger{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 300px;
+}
+
+.btn-danger{
+        border-radius: 50px;
+        height: 30px;
+    }
+
+.cartBtn{
+    border-radius: 25px;
+    background-color: green;
+
+    i{
+        color: white;
+    }
+    
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    height: 5vh;
+
+    .btn{
+        color: whitesmoke;
+    }
+
+    .btn:hover{
+        color: goldenrod;
+    }
+
+    .btn:active{
+        color: goldenrod;
+    }
+}
+
+section {
+    height: 80vh;
+    overflow: hidden;
+}
+
+.cartDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    max-height: 400px;
+    min-height: 200px;
+    position: absolute;
+    z-index: 50;
+    margin-top: 100px;
+    margin-left: 1000px;
+    background-color: white;
+    overflow-y: scroll;
+
+    button{
+        position: relative;
+        border-radius: 25px;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    height: 5vh;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    p{
+        margin-bottom: 0;
+    }
+}
+
+.product {
+    display: flex;
+    background-color: azure;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: -5px -5px 10px 0px rgba(0, 0, 0, 0.5), 5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+img{
+    width: 180px;
+    height: 200px;
+    /* z-index: 10; */
+    border-radius: 15px;
+}
+
+.container-fluid{
+    /* z-index: 10; */
+    height: 80%;
+    width: 100vw;
+   overflow-y: scroll;
+   background-color: slategray;
+}
+
+.container-fluid::-webkit-scrollbar{
+    background-color: goldenrod;
+}
+
+.container-fluid::-webkit-scrollbar-track{
+    background-color: wheat;
+    border-radius: 5px;
+}
+
+.container-fluid::-webkit-scrollbar-thumb {
+    background-color: #353b48;   
+    border-radius: 20px;      
+    border: 3px solid orange; 
+  }
+
+.headingDiv{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: goldenrod;
+}
+
+.headingText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    
+    h2{
+        font-weight: bolder;
+        
+    }
+}
+
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 300px;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+
+    .qty{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        button{
+            border-radius: 25px;
+        }
+    }
+
+    .cart{
+        display: flex;
+        justify-content: space-between;
+    }
+
+.outer{
+    background-color: #353b48;
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+    margin-top: -8px;
+    z-index: 110;
+    position: relative;
+    text-align: left;
+    visibility: hidden;
+
+    li{
+        list-style: none;
+        padding: 10px;
+    }
+
+    li:hover{
+        background-color: #e74c3c;
+        cursor: pointer;
+    }
+}
+.o:hover>.outer{
+    visibility: visible;
+}

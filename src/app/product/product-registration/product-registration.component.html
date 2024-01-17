@@ -1,0 +1,85 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<div class="section">
+  <div>
+    <form class="form row g-3" enctype="multipart/form-data" [formGroup]="productform" (ngSubmit)="saveProduct();">
+      <div class="col-md-1">
+        <label for="name" class="form-label">Name</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="name">
+      </div>
+      <div class="col-md-1">
+        <label for="type" class="form-label">Type</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="type">
+      </div>
+      <div class="col-md-1">
+        <label for="qty" class="form-label">Qty</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" formControlName="qty">
+      </div>
+      <div class="col-md-1">
+        <label for="cost" class="form-label" >Cost</label>
+        </div>
+        <div class="col-md-2" >
+        <input type="text" class="form-control" formControlName="cost">
+      </div>
+      <div class="col-md-1">
+        <label for="unitPrice" class="form-label">Unit Price</label>
+      </div>
+      <div class="col-md-2" >
+        <input type="text" class="form-control" formControlName="unitPrice">
+      </div>
+      <div class="col-md-4" >
+        <input type="file" src="" alt="" (change)="onFileChange($event)">
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">{{buttonName}}</button>
+      </div>
+    </form>
+  </div>
+  <hr>
+  <input type="search" class="form-control search" placeholder="Search here">
+  <hr>
+  <div class="tableDiv">
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead>
+          <tr class="text-center" >
+            <th scope="col">Code</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col" >Image</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody >
+           <tr *ngFor="let product of products">
+            <th scope="row">{{product.code}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.type}}</td>
+            <td>{{product.qty}}</td>
+            <td>{{product.cost}}</td>
+            <td class="text-center">{{product.unitPrice}}</td>
+            <td><img [src]="product.photo" alt="" class="productimage"></td>
+            <td>
+              <button class="btn btn-success btn-sm"(click)="selectProduct(product);">Update</button> &nbsp;
+              <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.code)" >Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+<app-footer></app-footer>

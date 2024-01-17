@@ -1,0 +1,48 @@
+<header>
+    <h1>Bauhinia Clothing Store</h1>
+    <div class="logger">
+        <div class="itemsNos" ></div>
+        <button class="btn cartBtn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></button>&nbsp;
+        <button class="btn btn-danger btn-sm">Logout</button>
+    </div>
+</header>
+<nav>
+    <div><button class="btn ">Home</button> |</div>
+    <div><button class="btn" routerLink="/dashboard">Shop</button> |</div>
+    <div><button class="btn" >New Arrivals</button> |</div>
+    <div class="o">
+        <button class="btn">Categories</button> |
+            <div class="outer">
+            <li>Gents</li>
+            <li>Ladies</li>
+            <li>Kits</li>
+            <li>Shoes</li>
+            <li>Bangle</li>
+            <li>Neakcles</li>
+    </div> 
+    </div>
+    <div>
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#myAccount" >My Account</button>
+    </div>
+</nav>
+<section>
+    <table class="table table-hover table-bordered text-center" >
+        <thead>
+            <th>Order Id</th>
+            <th>Order Date</th>
+            <th>Total Bill</th>
+            <th>Delivery Address</th>
+            <th>Status</th>
+        </thead>
+        <tbody *ngFor="let order of orders">
+            <tr >
+                <td>{{order.id}}</td>
+                <td>{{order.date}}</td>
+                <td>{{order.total}}</td>
+                <td>{{order.deliveryAddress}}</td>
+                <td>In Prograss</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<app-footer></app-footer>

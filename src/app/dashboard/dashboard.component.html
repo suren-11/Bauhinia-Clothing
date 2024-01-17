@@ -1,0 +1,119 @@
+<header>
+    <h1>Bauhinia Clothing Store</h1>
+    <div class="logger">
+        <div class="itemsNos" ></div>
+        <button class="btn cartBtn" (click)="displayCart();" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa fa-shopping-cart"></i></button>&nbsp;
+        <button class="btn btn-danger btn-sm">Logout</button>
+    </div>
+</header>
+<nav>
+    <div><button class="btn ">Home</button> |</div>
+    <div><button class="btn" routerLink="/dashboard">Shop</button> |</div>
+    <div><button class="btn" >New Arrivals</button> |</div>
+    <div class="o">
+        <button class="btn">Categories</button> |
+            <div class="outer">
+            <li>Gents</li>
+            <li>Ladies</li>
+            <li>Kits</li>
+            <li>Shoes</li>
+            <li>Bangle</li>
+            <li>Neakcles</li>
+    </div> 
+    </div>
+    <div>
+        <button class="btn" data-bs-toggle="modal" data-bs-target="#myAccount" >My Account</button>
+    </div>
+</nav>
+<section>
+    <div class="headingDiv">
+        <div class="headingText">
+            <h2>Welcome to Bauhinia Clothing Store!</h2>
+            <p>Leading Clothing Store in Srilanka.</p>
+        </div>
+        <div class="cartDiv" [hidden]="!isShowDiv">
+            <div>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Cart Items</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of cartItems">
+                        <tr  class="cart">
+                            <td>{{item.productId}}</td>
+                            <td>{{item.qty}}</td>
+                            <td>{{item.total}}</td>
+                            <td><button class="btn btn-danger btn-sm" (click)="cartRemove(item);">Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <button type="button" class="btn btn-success btn-sm" (click)="checkout();">CheckOut</button> &nbsp;
+                <button class="btn btn-warning btn-sm" routerLink="/customerOrders">View Orders</button> 
+            </div>
+        </div>
+        <div>
+            <div class="searchbar">
+                <input class="search_input" type="text" name="" placeholder="Search..." [(ngModel)] = "types" >
+                <i class="search_icon fas fa-search" (click)="getTypes(types)"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="row" *ngIf="isValid">
+            <div class="col-4"  *ngFor="let product of products">
+                <div class="p-3">
+                    <div class="product">
+                        <img [src]="product.photo" alt="{{product.name}}">
+                        <div class="product-info">
+                            <h3>{{product.name}}</h3>
+                            <p>{{product.type}}</p>
+                            <div class="qty">
+                                <button class="btn btn-secondary" (click)="qtyAdd(qty);">+</button>
+                                <p>{{qty}}</p>
+                                <button class="btn btn-secondary" (click)="qtyRemove(qty)">-</button>
+                            </div>
+                            <p>{{product.unitPrice}}</p>
+                            <button class="btn btn-primary" (click)="addtoCart(product,qty)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="!isValid">
+            <div class="col-4"  *ngFor="let product of searchProducts">
+                <div class="p-3">
+                    <div class="product">
+                        <img [src]="product.photo" alt="{{product.name}}">
+                        <div class="product-info">
+                            <h3>{{product.name}}</h3>
+                            <p>{{product.type}}</p>
+                            <div class="qty">
+                                <button class="btn btn-secondary" (click)="qtyAdd(qty);">+</button>
+                                <p>{{qty}}</p>
+                                <button class="btn btn-secondary" (click)="qtyRemove(qty)">-</button>
+                            </div>
+                            <p>{{product.unitPrice}}</p>
+                            <button class="btn btn-primary" (click)="addtoCart(product,qty)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <app-my-account></app-my-account>
+    </div>
+    <div>
+        <app-cart-items></app-cart-items>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; AKL Software. All rights reserved.</p>
+    <p> Developer : Sivanathan Suren Prasanth</p>
+</footer>
+
+<!-- <div *ngIf="true">{{email}}</div> -->

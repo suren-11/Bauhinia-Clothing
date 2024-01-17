@@ -1,0 +1,58 @@
+.outer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+  
+  }
+  
+  .inner{
+    width: 50%;
+    display: grid;
+    background-color: goldenrod;
+  }
+  
+  .form{
+    height: 200px;
+    width: 450px;
+    margin: 0 auto;
+    display: grid;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .login{
+    margin-left: auto;
+  }
+  .paragraph{
+    padding-top: 5px;
+    margin: auto;
+  }
+  h1{
+    margin: auto;
+    text-transform: uppercase;
+  }
+  .staff{
+    height: 40px;
+  }
+  
+  .inner2{
+    flex: 1;
+    background-image: url(../../../assets/photos/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -150px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Name{
+    margin: auto;
+  }
+  
+  .a{
+    margin: 5px 5px;
+    position: absolute;
+    width: 100px;
+    background-color: black;
+  }
+  

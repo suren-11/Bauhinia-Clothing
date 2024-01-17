@@ -1,0 +1,64 @@
+.outer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: goldenrod;
+  }
+  
+  .inner{
+    width: 50%;
+    display: grid;
+  }
+  
+  .form{
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .login{
+    margin-left: auto;
+  }
+  .paragraph{
+    padding-top: 5px;
+    margin: auto;
+  }
+  h1{
+    margin: auto;
+    text-transform: uppercase;
+  }
+  .staff{
+    height: 40px;
+  }
+  
+  .inner2{
+    flex: 1;
+    background-image: url(../../assets/photos/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -150px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Name{
+    margin: auto;
+  }
+  
+  .staffBtn{
+    margin: 5px 5px;
+    position: absolute;
+    width: 100px;
+    background-color: black;
+    border: none;
+    color: white;
+  }
+
+  .staffBtn:hover{
+    background-color: darkgray;
+    color: black;
+  }
+  

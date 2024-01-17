@@ -1,0 +1,72 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<section class="container-fluid">
+  <div class="tableDiv">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr class="text-center">
+          <th scope="col">Order Date</th>
+          <th scope="col">Orders</th>
+          <th scope="col">Grand Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let summary of orderSummary" class="text-center">
+          <th scope="row"><button class="btn btn-warning" (click)="orderfill(summary.date)" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">{{summary.date}}</button></th>
+          <td>{{summary.orderCount}}</td>
+          <td>{{summary.totalBill}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modelDiv">
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Order Details</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <td>Id</td>
+                  <td>Customer Id</td>
+                  <td>Date</td>
+                  <td>Bill</td>
+                  <td>Status</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let o of modelOrder">
+                  <td>{{o.id}}</td>
+                  <td>{{o.customerId}}</td>
+                  <td>{{o.date}}</td>
+                  <td>{{o.total}}</td>
+                  <td>
+                    <input type="checkbox">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+              (click)="modelOrder.splice(0)">Close</button>
+            <button type="button" class="btn btn-primary">Print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</section>
+<app-footer></app-footer>

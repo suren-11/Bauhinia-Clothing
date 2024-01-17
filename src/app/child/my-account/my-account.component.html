@@ -1,0 +1,65 @@
+<div class="modal fade" id="myAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">My Account</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form">
+          <div class="mb-3 row">
+            <label for="id" class="col-sm-3 col-form-label">Id :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.id}}" readonly="true">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="firstName" class="col-sm-3 col-form-label">First Name :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.firstName}}" [(ngModel)] = "customer.firstName">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="lastName" class="col-sm-3 col-form-label">Last Name :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.lastName}}" [(ngModel)]="customer.lastName">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="address" class="col-sm-3 col-form-label">Address :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.address}}" [(ngModel)]="customer.address">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="phoneNo1" class="col-sm-3 col-form-label">Phone No 1 :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.phone1}}" [(ngModel)]="customer.phone1">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="phoneNo2" class="col-sm-3 col-form-label">Phone No 2 :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.phone2}}" [(ngModel)]="customer.phone2">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="email" class="col-sm-3 col-form-label">Email :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.email}}" [(ngModel)]="customer.email">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="inputPassword" class="col-sm-3 col-form-label">Password :</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" value="{{customer.password}}" [(ngModel)]="customer.password">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="confirms();">Delete My Account</button>
+          <button type="button" class="btn btn-primary" (click)="updateCustomer();">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

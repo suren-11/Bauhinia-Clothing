@@ -1,0 +1,25 @@
+nav {
+    background-color: #444;
+    color: #fff;
+    /* padding: 5px 0; */
+    text-align: center;
+    height: 5vh;
+    overflow: hidden;
+}
+
+.btn{
+    border-left: 2px solid white;
+    border-radius: 0;
+    height: 100%;
+    padding: 0px 30px;
+    color: white;
+}
+
+.btn:hover{
+    background-color: rgb(255, 255, 255);
+    color:black;
+}
+
+.home{
+    border-left: none;
+}

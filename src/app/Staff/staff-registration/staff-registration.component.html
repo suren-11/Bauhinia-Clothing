@@ -1,0 +1,95 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<div class="section">
+  <div>
+    <form class="form row g-3">
+      <div class="col-md-1">
+        <label for="firstName" class="form-label">First Name:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" [(ngModel)]="staff.firstName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-1">
+        <label for="lastName" class="form-label">Last Name:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" [(ngModel)]="staff.lastName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-1">
+        <label for="phone" class="form-label">Phone No:</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" [(ngModel)]="staff.phone" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-1">
+        <label for="address" class="form-label">Address</label>
+      </div>
+      <div class="col-md-11">
+        <input type="text" class="form-control" placeholder="1234 Main St" [(ngModel)]="staff.address"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-1">
+        <label for="role" class="form-label">Role</label>
+      </div>
+      <div class="col-md-2">
+        <select class="form-select" [(ngModel)]="staff.role" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let role of roles" [ngValue]="role">{{role}}</option>
+        </select>
+      </div>
+      <div class="col-md-1">
+        <label for="email" class="form-label">Email</label>
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="abcd@gmail.com" [(ngModel)]="staff.email"
+          [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-1">
+        <label for="password" class="form-label">Password</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" [(ngModel)]="staff.password" [ngModelOptions]="{standalone:true}">
+      </div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-primary btn-sm col-md-3 " (click)="registerStaff();">{{buttonName}}</button>
+      </div>
+    </form>
+  </div>
+  <hr>
+  <div class="tableDiv">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Role</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let staff of staffs">
+            <th scope="row">{{staff.id}}</th>
+            <td>{{staff.firstName}}</td>
+            <td>{{staff.lastName}}</td>
+            <td>{{staff.address}}</td>
+            <td>{{staff.phone}}</td>
+            <td>{{staff.role}}</td>
+            <td>{{staff.email}}</td>
+            <td>{{staff.password}}</td>
+            <td>
+              <button class="btn btn-success btn-sm" (click)="getstaff(staff)">Update</button> &nbsp;
+              <button class="btn btn-danger btn-sm" (click)="removeStaff(staff.id)" >Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

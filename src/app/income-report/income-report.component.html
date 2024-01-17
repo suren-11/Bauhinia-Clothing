@@ -1,0 +1,27 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<section>
+    <div>
+        <table class="table table-active">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Total Products</th>
+                    <th scope="col">Total Cost</th>
+                    <th scope="col">Total Payments</th>
+                    <th scope="col">Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of summeryItems">
+                    <th scope="row">{{o.date}}</th>
+                    <td>{{o.totalQuantity}}</td>
+                    <td>{{o.totalCost}}</td>
+                    <td>{{o.totalPayment}}</td>
+                    <td>{{o.totalProfit}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<app-footer></app-footer>
